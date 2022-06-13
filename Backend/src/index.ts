@@ -1,21 +1,27 @@
 import express from "express";
-import { Request, Response } from "express";
-import dotenv from "dotenv";
+import { configureMiddleware } from "./middleware";
+import { configureRoutes } from "./routes";
+import { createServer } from "http";
+import { config, connectDB } from "./config";
 
-dotenv.config()
+const Main = async () => {
+  //connect and reference db
+  await connectDB();
 
-//initialize express
-const app = express();
+  //initialize express
+  const app = express();
 
-//middleware
-app.use(express.json());
+  //config express middleware
+  configureMiddleware(app);
 
-app.get("/", (_req: Request, res:Response) => {
-  res.status(200).send("we are live");
-});
+  //set up routes
+  configureRoutes(app);
 
-const PORT = process.env.PORT || 3000;
+  //initialize server and listen for connections on port
+  const httpServer = createServer(app);
 
-app.listen(PORT, ()=>{
-  console.log(`server listening on port ${PORT}`)
-});
+  httpServer.listen(config.PORT || 3000, () => {
+    console.log(`server started at port `, httpServer.address());
+  });
+};
+Main();
