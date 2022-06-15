@@ -1,0 +1,22 @@
+* {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+body {
+  background: #8FE7C7;
+  height: 896px;
+}
+
+.container- {
+  position: absolute;
+  width: 414px;
+  height: 896px;
+  background: #479E7F;
+}
+
+.position-content {
+  left: 50%;
+  transform: translate(-50%);
+}

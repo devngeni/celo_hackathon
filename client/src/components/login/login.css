@@ -1,0 +1,99 @@
+.login-page {
+    position: absolute;
+    width: 414px;
+    height: 896px;
+}
+
+.login-header {
+    position: absolute;
+    width: 147px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 254px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+}
+
+.input-phoneNo {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 346px;
+    box-sizing: border-box;
+    background: #F3FBF8;
+    border-radius: 25px;
+
+}
+
+.input-password {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 406px;
+
+    background: #F3FBF8;
+    border-radius: 25px;
+}
+
+.login-text {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    left: 140px;
+    top: 466px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.login {
+    position: absolute;
+    width: 95px;
+    height: 40px;
+    left: 245px;
+    top: 461px;
+
+    background: linear-gradient(264.12deg, #D3FFEF 1.87%, #7EE0BD 60.67%);
+    border-radius: 25px;
+    justify-items: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.img-arrow {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.bg-image {
+    position: absolute;
+    width: 1146px;
+    height: 658px;
+    left: 500px;
+    top: 130px;
+}

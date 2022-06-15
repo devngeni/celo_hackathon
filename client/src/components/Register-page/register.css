@@ -1,0 +1,122 @@
+.register-top-vector3 {
+    position: absolute;
+    width: 334px;
+    height: 334px;
+    left: 207px;
+    top: -93px;
+
+    background: linear-gradient(227.99deg, #F3FBF8 -5.73%, #D3FFEF 86.41%);
+    filter: blur(400px);
+}
+
+.register_header {
+    position: absolute;
+    width: 147px;
+    height: 30px;
+    left: 136px;
+    top: 255px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.register-username {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 82px;
+    top: 321px;
+
+    background: #F3FBF8;
+    border-radius: 25px;
+}
+
+.register-phnumber {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 82px;
+    top: 381px;
+
+    background: #F3FBF8;
+    border-radius: 25px;
+}
+
+.register-email {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 82px;
+    top: 441px;
+
+    background: #F3FBF8;
+    border-radius: 25px;
+}
+
+.register-password {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 82px;
+    top: 501px;
+
+    background: #F3FBF8;
+    border-radius: 25px;
+}
+
+.register-registerlink {
+    position: absolute;
+    width: 85px;
+    height: 30px;
+    left: 85px;
+    top: 561px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.button {
+    position: absolute;
+    width: 87px;
+    height: 40px;
+    left: 245px;
+    top: 556px;
+
+    background: linear-gradient(264.12deg, #D3FFEF 1.87%, #7EE0BD 60.67%);
+    box-shadow: 0px 4px 4px 2px #1B2723;
+    border-radius: 25px;
+}
+
+.button-vector {
+    position: absolute;
+    left: 16.67%;
+    right: 16.67%;
+    top: 20.83%;
+    bottom: 20.83%;
+
+    background: #F3FBF8;
+}
+
+.email-icon {
+    position: absolute;
+    left: 9.95%;
+    right: 5%;
+    top: 20%;
+    bottom: 20%;
+
+    background: #000000;
+}

@@ -1,0 +1,323 @@
+.swap-page {
+    position: absolute;
+    width: 414px;
+    height: 896px;
+}
+
+.register-top-vector3 {
+    position: absolute;
+    width: 334px;
+    height: 334px;
+    left: 207px;
+    top: -93px;
+
+    background: #097D97;
+    filter: blur(400px);
+}
+
+.header {
+    position: absolute;
+    width: 114px;
+    height: 24px;
+    left: 152px;
+    top: 23px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+}
+
+.header-buyCrypto {
+    position: absolute;
+    width: 123px;
+    height: 30px;
+    left: 163px;
+    top: 75px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.account_box {
+    position: absolute;
+    width: 323px;
+    height: 124px;
+    left: 45px;
+    top: 117px;
+
+    background: #D9D9D9;
+    border-radius: 25px;
+}
+
+.green_circle {
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    left: 51px;
+    top: 146px;
+    border-radius: 50%;
+    background: rgb(9, 235, 216);
+}
+
+.ksh {
+    position: absolute;
+    width: 323px;
+    height: 133px;
+    left: 48px;
+    top: 270px;
+    background: #D9D9D9;
+    border-radius: 25px;
+}
+
+.ksh-from {
+    position: absolute;
+    width: 47px;
+    height: 27px;
+    left: 60px;
+    top: 297px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.ksh-amount {
+    position: absolute;
+    width: 73px;
+    height: 27px;
+    left: 271px;
+    top: 297px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.ksh_text {
+    position: absolute;
+    width: 78px;
+    height: 60px;
+    left: 58px;
+    top: 322px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000;
+}
+
+.input-ksh-amount {
+    position: absolute;
+    width: 200px;
+    height: 72px;
+    left: 150px;
+    top: 316px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: end;
+    color: #000000;
+    background: transparent;
+    border: none;
+    outline-width: 0;
+}
+
+.arrow_circle {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 178px;
+    top: 419px;
+    border-radius: 50%;
+    background: #D9D9D9;
+}
+
+.arrow-icon {
+    position: absolute;
+    left: 17%;
+    top: 17%;
+}
+
+.toCUSD {
+    position: absolute;
+    width: 323px;
+    height: 126px;
+    left: 48px;
+    top: 491px;
+
+    background: #D9D9D9;
+    border-radius: 25px;
+}
+
+.to-Text {
+    position: absolute;
+    width: 22px;
+    height: 27px;
+    left: 60px;
+    top: 506px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.CUSD-text {
+    position: absolute;
+    width: 112px;
+    height: 60px;
+    left: 60px;
+    top: 533px;
+    cursor: not-allowed;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.cUSD-amount {
+    position: absolute;
+    width: 73px;
+    height: 27px;
+    left: 286px;
+    top: 506px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.input-CUSD-amount {
+    position: absolute;
+    width: 200px;
+    height: 72px;
+    left: 150px;
+    top: 527px;
+    outline-width: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: end;
+    color: #000000;
+    background: transparent;
+    border: none;
+}
+
+.input-CUSD-amount:active {
+    outline: none;
+}
+
+.swap_button {
+    position: absolute;
+    width: 323px;
+    height: 45px;
+    left: 48px;
+    top: 649px;
+    background: #D9D9D9;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    justify-content: center;
+}
+
+.swap-btn-text {
+    position: absolute;
+    width: 89px;
+    height: 48px;
+    left: 167px;
+    top: 648px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.reset_button {
+    position: absolute;
+    width: 323px;
+    height: 45px;
+    left: 48px;
+    top: 719px;
+    background: #D9D9D9;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.reset-button-text {
+    position: absolute;
+    width: 88px;
+    height: 48px;
+    left: 164px;
+    top: 718px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.balance-text {
+    position: absolute;
+    width: 75px;
+    height: 27px;
+    left: 284px;
+    top: 149px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    /* identical to box height */
+
+    color: #000000;
+}
