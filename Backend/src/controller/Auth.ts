@@ -5,7 +5,7 @@ import { config } from "../config";
 import { User } from "../model";
 import { IUser } from "../types";
 
-//get a specific user by their address
+//Get a specific user by their address
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
     const user = await User.findById(req.user?.id);
@@ -37,6 +37,7 @@ export const login = async (req: Request, res: Response) => {
       username: user.username,
       phonenumber: user.phonenumber,
       email: user.email,
+      walletAddress: user.walletAddress,
       password: user.password,
     };
     sign(

@@ -33,6 +33,7 @@
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.6",
+    "web3": "^1.7.3",
     "xss-clean": "^0.1.1"
   }
 }
