@@ -1,5 +1,6 @@
 import "dotenv/config";
 
+
 if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
   throw new Error(
     "Make sure you have MONGO_URI & JWT_SECRET in your .env file"
