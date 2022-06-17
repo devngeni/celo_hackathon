@@ -25,7 +25,7 @@ export const register = async (req: Request, res: Response) => {
   }
 
 
-    //create wallet address and private key
+    //create wallet address and private key which will not be saved
     let details = await createWallet();
     let walletAddress = details.walletAddress.toString();
     let privateKey = details.walletAddress.toString();
