@@ -10,7 +10,7 @@ function Modalapp() {
             <button
                 onClick={() => setOpenModal(true)}
                 className='swap_button'>
-                Swap
+                Buy
             </button>
             <Modal
                 open={openModal}

@@ -1,12 +1,9 @@
-.login-page {
-    position: absolute;
-    width: 414px;
-    height: 896px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 .login-header {
     position: absolute;
-    width: 147px;
+    width: 160px;
     height: 30px;
     left: 50%;
     transform: translateX(-50%);
@@ -14,8 +11,8 @@
 
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 750;
+    font-size: 21px;
     line-height: 30px;
     /* identical to box height */
 
@@ -33,7 +30,7 @@
     box-sizing: border-box;
     background: #F3FBF8;
     border-radius: 25px;
-
+    font-size: large;
 }
 
 .input-password {
@@ -46,6 +43,7 @@
 
     background: #F3FBF8;
     border-radius: 25px;
+    font-size: large;
 }
 
 .login-text {
@@ -57,7 +55,7 @@
 
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 750;
     font-size: 20px;
     line-height: 30px;
 
@@ -94,6 +92,50 @@
     position: absolute;
     width: 1146px;
     height: 658px;
-    left: 500px;
+    left: 600px;
     top: 130px;
+}
+
+@media screen and (max-width: 992px) {
+    .bg-image {
+        display: none;
+    }
+
+    .login-text {
+        left: 40%;
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        top: 486px;
+    }
+
+    .login {
+        position: absolute;
+        width: 95px;
+        height: 40px;
+        left: 53%;
+        top: 481px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bg-image {
+        display: none;
+    }
+
+    .login-text {
+        left: 30%;
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        top: 486px;
+    }
+
+    .login {
+        position: absolute;
+        width: 95px;
+        height: 40px;
+        left: 55%;
+        top: 481px;
+    }
 }

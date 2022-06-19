@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .register-top-vector3 {
     position: absolute;
     width: 334px;
@@ -10,11 +12,12 @@
 }
 
 .register_header {
+
     position: absolute;
-    width: 147px;
-    height: 30px;
-    left: 136px;
-    top: 255px;
+    width: max-content;
+    height: 54px;
+    left: 162px;
+    top: 254px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -22,28 +25,33 @@
     font-size: 20px;
     line-height: 30px;
 
-    /* identical to box height */
-
     color: #FFFFFF;
 }
 
 .register-username {
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 40px;
-    left: 82px;
+    left: 100px;
     top: 321px;
+
+    font-size: large;
+    font-family: 'poppins';
 
     background: #F3FBF8;
     border-radius: 25px;
 }
 
+
 .register-phnumber {
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 40px;
-    left: 82px;
+    left: 100px;
     top: 381px;
+
+    font-size: large;
+    font-family: 'poppins';
 
     background: #F3FBF8;
     border-radius: 25px;
@@ -51,10 +59,13 @@
 
 .register-email {
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 40px;
-    left: 82px;
+    left: 100px;
     top: 441px;
+
+    font-size: large;
+    font-family: 'poppins';
 
     background: #F3FBF8;
     border-radius: 25px;
@@ -62,61 +73,82 @@
 
 .register-password {
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 40px;
-    left: 82px;
+    left: 100px;
     top: 501px;
 
     background: #F3FBF8;
     border-radius: 25px;
+    font-size: large;
+    font-family: 'poppins';
 }
 
-.register-registerlink {
+
+.button-container {
     position: absolute;
-    width: 85px;
-    height: 30px;
-    left: 85px;
-    top: 561px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-
-    /* identical to box height */
-
-    color: #FFFFFF;
+    width: 300px;
+    height: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 580px;
+    background: transparent;
+    border: none;
 }
 
 .button {
     position: absolute;
     width: 87px;
     height: 40px;
-    left: 245px;
-    top: 556px;
+    right: 1px;
+    top: 1px;
 
     background: linear-gradient(264.12deg, #D3FFEF 1.87%, #7EE0BD 60.67%);
     box-shadow: 0px 4px 4px 2px #1B2723;
     border-radius: 25px;
 }
 
-.button-vector {
-    position: absolute;
-    left: 16.67%;
-    right: 16.67%;
-    top: 20.83%;
-    bottom: 20.83%;
+.register-text {
+    width: max-content;
+    height: 50px;
+    left: 10px;
+    top: 3px;
 
-    background: #F3FBF8;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    background: transparent;
+    border: 0ch;
 }
 
-.email-icon {
-    position: absolute;
-    left: 9.95%;
-    right: 5%;
-    top: 20%;
-    bottom: 20%;
 
-    background: #000000;
+@media screen and (max-width: 992px) {
+
+    .register_header {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .register-username {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .register-phnumber {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .register-password {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .register-email {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

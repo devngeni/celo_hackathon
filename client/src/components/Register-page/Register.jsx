@@ -7,7 +7,7 @@ import bg from '../../assets/celo.png'
 
 function Register() {
     return (
-        <>
+        <div className='container-'>
             <div>
                 <image className='bg-image'>
                     <img src={bg} alt='celo'></img>
@@ -31,12 +31,12 @@ function Register() {
                 <div>
                     <input type="text" placeholder="   password" className="register-password" />
                 </div>
-                <div className='register-registerlink'>Register</div>
-                <div>
-                    <Link to='/swap'> <button className='button' /></Link>
+                <div className='button-container'>
+                    <div><Link to='/swap'> <button className='button' /></Link></div>
+                    <div className='register-text'>Register</div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default Register
