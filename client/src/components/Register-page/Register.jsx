@@ -32,9 +32,14 @@ function Register() {
                     <input type="text" placeholder="   password" className="register-password" />
                 </div>
                 <div className='button-container'>
-                    <div><Link to='/swap'> <button className='button' /></Link></div>
+                    <div><Link to='/'> <button className='button' /></Link></div>
                     <div className='register-text'>Register</div>
                 </div>
+            </div>
+            <div className='lg-container'>
+                <div className='log-text'>Already have an account?</div>
+                <Link to='/'><button className='log-btn'>Sign-in</button></Link>
+
             </div>
         </div>
     )

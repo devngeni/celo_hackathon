@@ -21,9 +21,15 @@ const login = () => {
                 <input type='text' placeholder='    password' className='input-password' />
             </div>
             <div className='login-text'>Login</div>
-            <Link to='/register'>
-                <button className='login'></button>
+            <Link to='/transfer'>
+                <button className='login' ></button>
             </Link>
+            <div className='reg'>
+                <div className='reg-text'>Don’t have an account?</div>
+                <Link to='/register'>
+                    <button className='reg-btn'> Register</button>
+                </Link>
+            </div>
 
         </div>
     )

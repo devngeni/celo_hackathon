@@ -29,7 +29,9 @@
 }
 
 .register-username {
-    position: absolute;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     height: 40px;
     left: 100px;
@@ -123,6 +125,56 @@
     background: transparent;
     border: 0ch;
 }
+
+.log-text {
+    position: absolute;
+    width: 250px;
+    height: 55px;
+    left: 82px;
+    top: 610px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.log-btn {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+    left: 294px;
+    top: 590px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 45%;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: blue;
+    line-height: 24px;
+}
+
+.lg-container {
+    position: absolute;
+    width: 320px;
+    height: 55px;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    top: 40px;
+}
+
+.log-btn:hover {
+    font-size: large;
+
+}
+
 
 
 @media screen and (max-width: 992px) {
