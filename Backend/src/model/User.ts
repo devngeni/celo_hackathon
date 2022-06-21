@@ -1,5 +1,5 @@
 import { Schema, model, Model } from "mongoose";
-import { IUser } from "src/types";
+import { IUser } from "../types";
 import { PasswordManager } from "../utils/passwordManager";
 
 //an interface tha describes attributes a user model should have
@@ -29,6 +29,10 @@ const UserSchema = new Schema<IUser, UserModel>(
       type: String,
       unique: true,
     },
+    privateKey: {
+      type: String,
+      unique: true,
+    },
     password: {
       type: String,
       required: true,
@@ -53,6 +57,7 @@ UserSchema.pre("save", async function (next) {
     return next();
   }
   this.password = await PasswordManager.toHash(this.password);
+  this.privateKey = await PasswordManager.toHash(this.privateKey);
   next();
 });
 

@@ -9,6 +9,7 @@ import { IUser } from "../types";
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
     const user = await User.findById(req.user?.id);
+
     if (!user) {
       return res.status(404).json({ msg: "User not found", success: false });
     }
@@ -27,6 +28,7 @@ export const login = async (req: Request, res: Response) => {
     return res.status(400).json({ errors: errors.array() });
   }
   const { phonenumber } = req.body;
+
   try {
     const user = await User.findOne({ phonenumber });
     if (!user) {
@@ -38,6 +40,7 @@ export const login = async (req: Request, res: Response) => {
       phonenumber: user.phonenumber,
       email: user.email,
       walletAddress: user.walletAddress,
+      privateKey: user.privateKey,
       password: user.password,
     };
     sign(
@@ -48,10 +51,9 @@ export const login = async (req: Request, res: Response) => {
       },
       (err, token) => {
         if (err) throw err;
-        return res.json({ token, success: true });
+        res.json({ token, success: true });
       }
     );
-    return res.status(400).send("bad request");
   } catch (err: any) {
     console.error(err.message);
     return res.status(500).send("Internal server error");
