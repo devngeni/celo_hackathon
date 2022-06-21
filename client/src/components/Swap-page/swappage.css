@@ -1,30 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-.Home-Profile-btn {
-    position: absolute;
-    width: 300px;
-    height: 54px;
-    right: 10px;
-    top: 65px;
-}
-
-.profile {
-    top: 5px;
-    left: 10px;
-    width: max-content;
-    border: none;
-    background: transparent;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-    cursor: pointer;
-
-    color: #FFFFFF;
-}
-
 .header_name {
     position: absolute;
     width: 271px;
@@ -182,7 +158,7 @@
 
 .ksh_text {
     position: absolute;
-    width: 78px;
+    width: max-content;
     height: 60px;
     left: 55px;
     top: 82px;
@@ -201,11 +177,10 @@
 .input-ksh-amount {
     position: absolute;
     position: absolute;
-    width: 900px;
+    width: 800px;
     height: 72px;
     right: 55px;
     top: 82px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -362,7 +337,6 @@
         position: absolute;
         width: 450px;
         height: 124px;
-        left: 404px;
         top: 270px;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -516,11 +490,10 @@
 
     .ksh_text {
         position: absolute;
-        width: 78px;
+        width: max-content;
         height: 60px;
         left: 10px;
         top: 52px;
-
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
@@ -536,7 +509,6 @@
         top: 670px;
         left: 50%;
         transform: translate(-50%, -50%);
-
         background: #D9D9D9;
         border-radius: 25px;
         cursor: pointer;

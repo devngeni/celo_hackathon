@@ -8,7 +8,6 @@
     left: 50%;
     transform: translateX(-50%);
     top: 254px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 750;
@@ -89,11 +88,16 @@
 }
 
 .bg-image {
-    position: absolute;
-    width: 1146px;
-    height: 658px;
-    left: 600px;
+    justify-items: center;
     top: 130px;
+    height: 658px;
+}
+
+.container-image {
+    position: absolute;
+    background: #7EE0BD;
+    left: 600px;
+    width: fit-content;
 }
 
 .reg {
@@ -146,7 +150,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .bg-image {
+    .container-image {
         display: none;
     }
 
