@@ -7,6 +7,7 @@ export const validateToken = (
   res: Response,
   next: NextFunction
 ) => {
+
   const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
@@ -25,7 +26,6 @@ export const validateToken = (
         req.user = decoded?.user || decoded;
         next();
       }
-      return res.status(500).json({ msg: "random error1" });
     });
   } catch (err: any) {
     console.error(
@@ -33,5 +33,4 @@ export const validateToken = (
     );
     res.status(500).json({ msg: "internal authentication error" });
   }
-  return res.status(500).json({ msg: "random error2" });
 };

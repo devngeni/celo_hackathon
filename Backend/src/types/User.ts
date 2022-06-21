@@ -4,5 +4,6 @@ export interface IUser {
   phonenumber: number;
   email: string;
   walletAddress: string;
+  privateKey: string;
   password: string;
 }
