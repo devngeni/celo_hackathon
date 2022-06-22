@@ -3,7 +3,8 @@ import { configureMiddleware } from "./middleware";
 import { configureRoutes } from "./routes";
 import { createServer } from "http";
 import { config, connectDB } from "./config";
-import { getBal, swapCrypto } from "./controller/sendcrypto";
+// import {  swapCrypto } from "./controller/sendcrypto";
+// import { getBal } from "./controller/checkbalance";
 
 const Main = async () => {
   //connect and reference db
@@ -23,8 +24,8 @@ const Main = async () => {
 
 
   //cryptoswap
-  getBal()
-  swapCrypto()
+  // getBal()
+  // swapCrypto()
   // getBal()
 
 
