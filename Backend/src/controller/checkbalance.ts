@@ -13,24 +13,23 @@ const kit = newKitFromWeb3(web3 as any);
 
 //check wallet address balance
 export const getBal = async (req: Request, res: Response) => {
-    const { phonenumber } = req.body;
-  
-    const user = await User.findOne({ phonenumber });
-    const walletAddress = user?.walletAddress;
-    console.log("user1", walletAddress);
-  
-    //cUsd
-    //   let cUSDtoken = await kit.contracts.getStableToken();
-    //   let cUSDbal = await cUSDtoken.balanceOf(walletAddress!);
-  
-    //celo token
-    let celotoken = await kit.contracts.getGoldToken();
-    let celobal = await celotoken.balanceOf(walletAddress!);
-  
-    let celobalance = celobal.toNumber();
-    console.log("cUSDbal", celobal.toNumber());
-    return res
-      .status(200)
-      .json({ msg: "wallet balance fetched", walletAddress, celobalance });
-  };
-  
+  const { phonenumber } = req.body;
+
+  const user = await User.findOne({ phonenumber });
+  const walletAddress = user?.walletAddress;
+  console.log("walletAddress", walletAddress);
+
+  //cUsd
+  let cUSDtoken = await kit.contracts.getStableToken();
+  let cUSDbal = await cUSDtoken.balanceOf(walletAddress!);
+
+  //celo token
+  // let celotoken = await kit.contracts.getGoldToken();
+  // let celobal = await celotoken.balanceOf(walletAddress!);
+
+  let cUSDbalance = cUSDbal.toNumber();
+  console.log("cUSDbal", cUSDbal.toNumber());
+  return res
+    .status(200)
+    .json({ msg: "wallet balance fetched", walletAddress, cUSDbalance });
+};

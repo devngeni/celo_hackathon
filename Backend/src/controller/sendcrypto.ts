@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { newKitFromWeb3 } from "@celo/contractkit";
 import "dotenv/config";
 import { User } from "../model";
+import { Transaction } from "../model/Transaction";
 
 const celoProvider = process.env.ALFAJORES_RPC!;
 
@@ -12,32 +13,65 @@ const web3 = new Web3(celoProvider);
 const kit = newKitFromWeb3(web3 as any);
 
 //hard coded values
-// let recipientAddress = "0xF17fcF91DF7038021CDe4DDE7e656163be308b96";
 let anAddress = "0xC8AafcfE085C141475897Bb10a3ce36fe31173b7";
 
 //send cUSD to another wallet address
 export const swapCrypto = async (req: Request, res: Response) => {
   const { phonenumber, amount } = req.body;
-  const user = await User.findOne({phonenumber})
-  let recipientAddress = user?.walletAddress
+  const user = await User.findOne({ phonenumber });
+  let recipientAddress = user?.walletAddress;
   let privatekey =
     "0xeda4164c50e7ff4c4ab849bb06e7ba6f78860b53f8bedc7c84faca4fbbe8d18a";
   kit.connection.addAccount(privatekey);
 
-  let celotoken = await kit.contracts.getGoldToken();
-  try {
-    let celotx = await celotoken
-      .transfer(recipientAddress!, amount)
-      .send({ from: anAddress });
+  //celo token
+  // let celotoken = await kit.contracts.getGoldToken();
 
-    let celoReceipt = await celotx.waitReceipt();
+  //cUsd
+  let cUSDtoken = await kit.contracts.getStableToken();
 
-    console.log("celo receipt", celoReceipt);
-    let txhash = celoReceipt.transactionHash;
-    console.log("txhash", txhash);
+  //check balance
+  let cUSDbalance = await cUSDtoken.balanceOf(anAddress);
+  let initialCUSDBalance = cUSDbalance.toNumber();
+  if (amount < initialCUSDBalance) {
+    try {
+      let cUSDtx = await cUSDtoken
+        .transfer(recipientAddress!, amount)
+        .send({ from: anAddress });
 
-    return res.status(201).json({ msg: "transaction successfull", txhash });
-  } catch (error) {
-    console.log(error);
+      let cUSDReceipt = await cUSDtx.waitReceipt();
+
+      //check balance
+      let cUSDbal = await cUSDtoken.balanceOf(anAddress);
+      let cUSDbalance = cUSDbal.toNumber();
+
+      console.log("cUSD receipt", cUSDReceipt);
+      let txhash = cUSDReceipt.transactionHash;
+      console.log("txhash", txhash);
+      //save transacion details
+      try {
+        const transaction = new Transaction({
+          txhash: txhash,
+          to: recipientAddress,
+          amount: req.body.amount,
+          from: anAddress,
+        });
+        let datasaved = await transaction.save();
+        console.log("datasaved", datasaved);
+      } catch (error) {
+        console.log(error);
+      }
+      return res.status(201).json({
+        msg: "transaction successfull",
+        amount,
+        recipientAddress,
+        txhash,
+        cUSDbalance,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    return res.status(400).json({ msg: "Wallet balance too low" });
   }
 };
