@@ -2,7 +2,7 @@ import { Schema, model, Model } from "mongoose";
 import { IUser } from "../types";
 import { PasswordManager } from "../utils/passwordManager";
 
-//an interface tha describes attributes a user model should have
+//an interface that describes attributes a user model should have
 interface UserModel extends Model<IUser> {
   build(attrs: IUser): IUser;
 }

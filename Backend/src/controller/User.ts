@@ -24,7 +24,7 @@ export const register = async (req: Request, res: Response) => {
     return res.status(400).json({ msg: "User already exists", success: false });
   }
 
-  //create wallet address and private key which will not be saved
+  //create wallet address and private key which will be saved
   let details = await createWallet();
   let walletAddress = details.walletAddress.toString();
   let privateKey = details.walletAddress.toString();
