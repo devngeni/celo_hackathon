@@ -6,19 +6,6 @@
 
 }
 
-.logo-button {
-    position: absolute;
-    width: 31px;
-    height: 31px;
-    left: 13px;
-    top: 21px;
-    border-radius: 50%;
-
-    background: radial-gradient(100% 100% at 50.45% 0%, #85CAB1 0%, #BAEEDC 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-}
-
 .menu-icon {
     position: absolute;
     left: 0%;
@@ -166,5 +153,37 @@
         line-height: 30px;
 
         color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header_name {
+        position: absolute;
+        width: max-content;
+        height: 54px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 80px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+
+        color: #FFFFFF;
+    }
+
+    .logo-button {
+        position: absolute;
+        width: 31px;
+        height: 31px;
+        left: 20px;
+        top: 30px;
+        border-radius: 50%;
+
+        background: radial-gradient(100% 100% at 50.45% 0%, #85CAB1 0%, #BAEEDC 100%)
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        ;
     }
 }

@@ -7,8 +7,8 @@ import bg from '../../assets/celo.png'
 
 function Register() {
     return (
-        <div className='container-'>
-            <div>
+        <div className='container-B'>
+            <div className='container-image'>
                 <image className='bg-image'>
                     <img src={bg} alt='celo'></img>
                 </image>
@@ -32,9 +32,14 @@ function Register() {
                     <input type="text" placeholder="   password" className="register-password" />
                 </div>
                 <div className='button-container'>
-                    <div><Link to='/swap'> <button className='button' /></Link></div>
+                    <div><Link to='/'> <button className='button' /></Link></div>
                     <div className='register-text'>Register</div>
                 </div>
+            </div>
+            <div className='lg-container'>
+                <div className='log-text'>Already have an account?</div>
+                <a href='/'><button className='log-btn'>Sign-in</button></a>
+
             </div>
         </div>
     )
