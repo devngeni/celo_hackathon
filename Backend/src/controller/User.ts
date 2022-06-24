@@ -65,7 +65,7 @@ export const register = async (req: Request, res: Response) => {
     );
     return res
       .status(201)
-      .json({ msg: "user created successfully", privateKey });
+      .json({ msg: "user created successfully", walletAddress, privateKey });
   } catch (err: any) {
     console.error(err.message);
     return res.status(500).json({ msg: "Internal server error" });

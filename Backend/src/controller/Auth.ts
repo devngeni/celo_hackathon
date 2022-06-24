@@ -6,7 +6,7 @@ import { User } from "../model";
 import { IUser } from "../types";
 
 //Get a specific user by their address
-export const getCurrentUser = async (req: Request, res: Response) => {
+export const getCurrentUser = async (req: any, res: any) => {
   try {
     const user = await User.findById(req.user?.id);
 
@@ -21,7 +21,7 @@ export const getCurrentUser = async (req: Request, res: Response) => {
 };
 
 //Authenticate user and get session token
-export const login = async (req: Request, res: Response) => {
+export const login = async (req: any, res: any) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -31,6 +31,7 @@ export const login = async (req: Request, res: Response) => {
 
   try {
     const user = await User.findOne({ phonenumber });
+
     if (!user) {
       return res.status(404).json({ msg: "User not found", success: false });
     }
@@ -43,19 +44,21 @@ export const login = async (req: Request, res: Response) => {
       privateKey: user.privateKey,
       password: user.password,
     };
-    sign(
-      payload,
-      config.JWT_SECRET,
-      {
-        expiresIn: config.JWT_TOKEN_EXPIRES_IN,
-      },
-      (err, token) => {
-        if (err) throw err;
-        res.json({ token, success: true });
-      }
-    );
+
+    const token = sign({ payload }, config.JWT_SECRET, {
+      expiresIn: config.JWT_TOKEN_EXPIRES_IN,
+    });
+
+    // req.session!.token = token;
+
+    res.status(200).send({
+      token,
+      user: payload.id,
+      message: "User signed in",
+      status: "success",
+    });
   } catch (err: any) {
     console.error(err.message);
-    return res.status(500).send("Internal server error");
+    return res.status(500).send("Internalsession server error");
   }
 };
