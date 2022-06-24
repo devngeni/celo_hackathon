@@ -1,6 +1,7 @@
 import { Schema, model, Model } from "mongoose";
 import { IUser } from "../types";
 import { PasswordManager } from "../utils/passwordManager";
+import {encrypt} from "../utils"
 
 //an interface that describes attributes a user model should have
 interface UserModel extends Model<IUser> {
@@ -57,7 +58,7 @@ UserSchema.pre("save", async function (next) {
     return next();
   }
   this.password = await PasswordManager.toHash(this.password);
-  this.privateKey = await PasswordManager.toHash(this.privateKey);
+  this.privateKey = await encrypt(this.privateKey);
   next();
 });
 

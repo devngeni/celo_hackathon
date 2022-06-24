@@ -5,6 +5,7 @@ export const configureRoutes = (app: Application) => {
   app.use("/api/users", require("./api/users"));
   app.use("/api/", require("./api/sendcrypto"));
   app.use("/api/", require("./api/checkbal"));
+  app.use("/api/", require("./api/mpesa"));
   app.use("/", (_req, res) => {
     res.status(200).send("Welcome to Swap Crypto");
   });

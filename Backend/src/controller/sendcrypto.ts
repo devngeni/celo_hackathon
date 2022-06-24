@@ -16,10 +16,15 @@ const kit = newKitFromWeb3(web3 as any);
 let anAddress = "0xC8AafcfE085C141475897Bb10a3ce36fe31173b7";
 
 //send cUSD to another wallet address
-export const swapCrypto = async (req: Request, res: Response) => {
+export const swapCrypto = async (req: any, res: Response) => {
   const { phonenumber, amount } = req.body;
   const user = await User.findOne({ phonenumber });
   let recipientAddress = user?.walletAddress;
+
+  const c_user = req.session!.c_user;
+
+  console.log(c_user)
+
   let privatekey =
     "0xeda4164c50e7ff4c4ab849bb06e7ba6f78860b53f8bedc7c84faca4fbbe8d18a";
   kit.connection.addAccount(privatekey);
