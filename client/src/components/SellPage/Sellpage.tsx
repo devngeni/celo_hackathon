@@ -8,11 +8,11 @@ function Sellpage() {
     const [valueA, setValueA] = useState('');
 
 
-    const handleChange = event => {
+    const handleChange = (event: any) => {
         const result = event.target.value.replace(/\D/g, '');
         setValue(result);
     };
-    const handleChangeA = event => {
+    const handleChangeA = (event: any) => {
         const result = event.target.value.replace(/\D/g, '');
         setValueA(result);
     };

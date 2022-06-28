@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import { sign } from "jsonwebtoken";
 import { config } from "../config";

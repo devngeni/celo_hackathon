@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import './swappage.css'
-import Popup from './Popup.js'
+import Popup from './Popup'
 
 function BuyCrypto() {
     const [value, setValue] = useState('');
     const [valueA, setValueA] = useState('');
 
 
-    const handleChange = event => {
+    const handleChange = (event: any) => {
         const result = event.target.value.replace(/\D/g, '');
         setValue(result);
     };
-    const handleChangeA = event => {
+    const handleChangeA = (event: any) => {
         const result = event.target.value.replace(/\D/g, '');
         setValueA(result);
     };

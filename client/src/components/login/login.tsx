@@ -1,14 +1,14 @@
 import React from 'react'
 import './login.css'
 import { Link } from "react-router-dom";
-import bg from '../../assets/celo.png'
+
 
 const login = () => {
     return (
         <div className='container-B'>
             <div className='container-image'>
                 <image className='bg-image'>
-                    <img src={bg} alt='celo'></img>
+                    <img src={ require('../../assets/celo.png')} alt='celo'></img>
                 </image>
             </div>
             <div className='container-'>
