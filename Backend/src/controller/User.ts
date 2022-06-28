@@ -63,12 +63,11 @@ export const register = async (req: Request, res: Response) => {
         res.status(200).json({ token, success: true });
       }
     );
-    return res
-      .status(201)
-      .json({ msg: "user created successfully", walletAddress, privateKey });
   } catch (err: any) {
     console.error(err.message);
-    return res.status(500).json({ msg: "Internal server error" });
+    return res
+      .status(500)
+      .json({ msg: "Internal server error", success: false });
   }
 };
 
@@ -80,4 +79,3 @@ export const getUserById = async (id: string) => {
     return null;
   }
 };
-

@@ -7,7 +7,7 @@ import Modpopup from './popup'
 function Transfer() {
     const [value, setValue] = useState('');
 
-    const handleChange = e => {
+    const handleChange = (e:any) => {
         const result = e.target.value.replace(/\D/g, '');
         setValue(result);
     };
