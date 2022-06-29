@@ -58,6 +58,6 @@ export const login = async (req: any, res: any) => {
     });
   } catch (err: any) {
     console.error(err.message);
-    return res.status(500).send("Internalsession server error");
+    return res.status(500).send("Internal session server error");
   }
 };

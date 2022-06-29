@@ -63,8 +63,8 @@ export function Register() {
                     <input type="text" placeholder="password" className="register-password" onChange={(e)=> setPassword(e.target.value.trim())} />
                 </div>
                 <div className='button-container'>
-                    <div><Link to='/'> <button onClick={handleUserRegister} className='button' /></Link></div>
-                    <div className='register-text'>Register</div>
+                    <div><Link to='/'> <button onClick={handleUserRegister} className='button'>Register</button></Link></div>
+                    <div className='register-text'></div>
                 </div>
             </div>
             <div className='lg-container'>
