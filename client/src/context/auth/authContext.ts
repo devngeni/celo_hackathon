@@ -4,7 +4,9 @@ import { IUser } from "../../types";
 interface IAuthContext {
   isLoggedIn: boolean;
   user: IUser | null;
+  isLoading: boolean;
 
+  setIsLoading: (value: boolean)=> void;
   setIsLoggedIn: (value: boolean) => void;
   setUser: (user: IUser) => void;
 
@@ -21,7 +23,9 @@ interface IAuthContext {
 const defaultValue = {
   isLoggedIn: false,
   user: null,
+  isLoading: true,
 
+  setIsLoading: (value: boolean)=> {},
   setIsLoggedIn: (value: boolean) => {},
   setUser: (user: IUser) => {},
 
@@ -32,6 +36,7 @@ const defaultValue = {
     password: string;
   }) => {},
   login: async (payload: { phoneNumber: string; password: string }) => {},
+  logout: async ()=>{},
   loadUser: async (token:any) => {},
 };
 
