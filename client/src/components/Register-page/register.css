@@ -36,6 +36,7 @@
     height: 40px;
     left: 100px;
     top: 321px;
+    padding-left: 10px;
 
     font-size: large;
     font-family: 'poppins';
@@ -51,6 +52,8 @@
     height: 40px;
     left: 100px;
     top: 381px;
+    padding-left: 10px;
+
 
     font-size: large;
     font-family: 'poppins';
@@ -65,6 +68,8 @@
     height: 40px;
     left: 100px;
     top: 441px;
+    padding-left: 10px;
+
 
     font-size: large;
     font-family: 'poppins';
@@ -79,6 +84,8 @@
     height: 40px;
     left: 100px;
     top: 501px;
+    padding-left: 10px;
+
 
     background: #F3FBF8;
     border-radius: 25px;
@@ -93,9 +100,11 @@
     height: 60px;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 580px;
     background: transparent;
     border: none;
+    top:580px !important;
+    padding-right: 90px;
+
 }
 
 .button {
@@ -107,6 +116,7 @@
     background: linear-gradient(264.12deg, #D3FFEF 1.87%, #7EE0BD 60.67%);
     box-shadow: 0px 4px 4px 2px #1B2723;
     border-radius: 25px;
+
 }
 
 .register-text {
