@@ -46,11 +46,11 @@ export const useAuth = () => {
       console.log("token", token);
 
       if (success && token) {
-        localStorage.setItem('token', token)
-        setAuthToken(token)
-        await loadUser(token)
+        localStorage.setItem("token", token);
+        setAuthToken(token);
+        await loadUser(token);
       } else {
-        toast.error(msg)
+        toast.error(msg);
       }
     } catch (error: any) {
       toast.error(error);
@@ -82,27 +82,31 @@ export const useAuth = () => {
       } else {
         toast.error(msg);
       }
+      console.log("up here", token);
     } catch (error: any) {
       toast.error(error);
     }
   };
+  
 
   const loadUser = async (token: string) => {
     try {
-      const { data } = await config.axios.get(`/api/auth`, {
+      const { data } = await config.axios.get("/auth/login", {
         headers: {
-          Authorization: `x-auth-token ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
+      console.log("in here", token);
 
       const { success, msg, user } = JSON.parse(data);
 
       if (success && user) {
-        console.log({ success, user });
+        console.log({ message: "user login success", success, user });
 
         setIsLoggedIn(true);
         setIsLoading(false);
-        setUser(user)
+        setUser(user);
+        console.log("check this out", user);
       } else {
         toast.error(msg);
       }
@@ -111,6 +115,7 @@ export const useAuth = () => {
       toast.error(error);
     }
   };
+  console.log("down here");
 
   const logout = async () => {
     localStorage.removeItem("token");

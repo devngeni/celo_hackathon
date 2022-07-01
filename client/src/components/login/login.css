@@ -19,6 +19,7 @@
     color: #FFFFFF;
 }
 
+
 .input-phoneNo {
     position: absolute;
     width: 250px;
@@ -30,6 +31,7 @@
     background: #F3FBF8;
     border-radius: 25px;
     font-size: large;
+    padding: 10px
 }
 
 .input-password {
@@ -39,7 +41,8 @@
     left: 50%;
     transform: translateX(-50%);
     top: 406px;
-
+    padding-left: 10px;
+    box-sizing: border-box;
     background: #F3FBF8;
     border-radius: 25px;
     font-size: large;
@@ -93,20 +96,31 @@
     height: 658px;
 }
 
+
 .container-image {
     position: absolute;
     background: #7EE0BD;
     left: 600px;
     width: fit-content;
 }
-
+.button-container {
+    top:500px !important;
+    padding-top: 180px;
+    padding-right: 5px !important;
+    
+}
+.button {
+    cursor: pointer;
+    margin-right: 9%;
+    
+}
 .reg {
     position: absolute;
     width: 320px;
     height: 55px;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 540px;
+    top: 550px;
 }
 
 .reg-text {

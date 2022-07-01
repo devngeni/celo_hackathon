@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, FormEvent } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context";
 
 export function Login() {
@@ -8,7 +8,9 @@ export function Login() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async (e: any) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     //validate login
     if (!phoneNumber) {
@@ -17,10 +19,12 @@ export function Login() {
     if (!password) {
       console.log("Please input password");
     }
-    login({
+    await login({
       phoneNumber,
       password,
     });
+    console.log("App is here");
+    return navigate("/Home");
   };
 
   return (
@@ -31,22 +35,24 @@ export function Login() {
         </image>
       </div>
       <div className="container-">
-        <div className="login-header">SWAP CRYPTO</div>
-        <div>
-          <input
-            type="text"
-            placeholder="phone number"
-            className="input-phoneNo"
-            onChange={(e) => setPhoneNumber(e.target.value.trim())}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="password"
-            className="input-password"
-            onChange={(e) => setPassword(e.target.value.trim())}
-          />
+        <div className="box">
+          <div className="login-header">SWAP CRYPTO</div>
+          <div>
+            <input
+              type="text"
+              placeholder="phone number"
+              className="input-phoneNo"
+              onChange={(e) => setPhoneNumber(e.target.value.trim())}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="password"
+              className="input-password"
+              onChange={(e) => setPassword(e.target.value.trim())}
+            />{" "}
+          </div>
           <div className="button-container">
             <div>
               <Link to="/">
@@ -56,15 +62,13 @@ export function Login() {
                 </button>
               </Link>
             </div>
-            <div className="register-text"></div>
+          </div>{" "}
+          <div className="reg">
+            <div className="reg-text">Don’t have an account?</div>
+            <Link to="/register">
+              <button className="reg-btn"> Register</button>
+            </Link>
           </div>
-        </div>
-
-        <div className="reg">
-          <div className="reg-text">Don’t have an account?</div>
-          <Link to="/register">
-            <button className="reg-btn"> Register</button>
-          </Link>
         </div>
       </div>
     </div>

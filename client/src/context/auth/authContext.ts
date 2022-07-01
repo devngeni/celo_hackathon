@@ -6,7 +6,7 @@ interface IAuthContext {
   user: IUser | null;
   isLoading: boolean;
 
-  setIsLoading: (value: boolean)=> void;
+  setIsLoading: (value: boolean) => void;
   setIsLoggedIn: (value: boolean) => void;
   setUser: (user: IUser) => void;
 
@@ -25,7 +25,7 @@ const defaultValue = {
   user: null,
   isLoading: true,
 
-  setIsLoading: (value: boolean)=> {},
+  setIsLoading: (value: boolean) => {},
   setIsLoggedIn: (value: boolean) => {},
   setUser: (user: IUser) => {},
 
@@ -36,8 +36,10 @@ const defaultValue = {
     password: string;
   }) => {},
   login: async (payload: { phoneNumber: string; password: string }) => {},
-  logout: async ()=>{},
-  loadUser: async (token:any) => {},
+  logout: async () => {},
+  loadUser: async (token: any) => {},
 };
 
 export const AuthContext = createContext<IAuthContext>(defaultValue);
+
+export const AuthConsumer = AuthContext.Consumer;
