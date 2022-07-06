@@ -13,7 +13,7 @@ export const validateToken = (
   if (!token) {
     return res
       .status(401)
-      .json({ msg: "Unauthorized Request", success: false });
+      .json({ msg: "Unauthorized Request!", success: false });
   }
   try {
     verify(token, config.JWT_SECRET, (err, decoded: any) => {
@@ -21,7 +21,7 @@ export const validateToken = (
         console.log(err);
         return res
           .status(401)
-          .json({ msg: "Unauthorized Request", success: false });
+          .json({ msg: "Unauthorized Request!", success: false });
       } else {
         req.user = decoded?.user || decoded;
         next();
@@ -31,6 +31,6 @@ export const validateToken = (
     console.error(
       "Internal authentication error - error in token validation middleware"
     );
-    res.status(500).json({ msg: "internal authentication error" });
+    res.status(500).json({ msg: "Internal authentication error" });
   }
 };

@@ -58,9 +58,9 @@ export const register = async (req: Request, res: Response) => {
       {
         expiresIn: config.JWT_TOKEN_EXPIRES_IN,
       },
-      (err, token) => {
+      (err) => {
         if (err) throw err;
-        res.status(200).json({ token, success: true });
+        res.status(200).json({ dataSaved, msg:"user registered successfully" , success: true });
       }
     );
   } catch (err: any) {
