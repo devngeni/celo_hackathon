@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./register.css";
 import "../login/login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context";
 
 export function Register() {
@@ -10,6 +10,18 @@ export function Register() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
+  const navigate = useNavigate();
+
+  const handlePasswordChange = (e: any) => {
+    setPasswordType(e.target.value);
+  };
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    }
+    setPasswordType("password");
+  };
 
   const handleUserRegister = async (e: any) => {
     e.preventDefault();
@@ -31,6 +43,8 @@ export function Register() {
       email,
       password,
     });
+
+    navigate("/");
   };
   return (
     <div className="container-B">
@@ -68,17 +82,22 @@ export function Register() {
         </div>
         <div>
           <input
-            type="text"
+            type={passwordType}
             placeholder="password"
             className="register-password"
             onChange={(e) => setPassword(e.target.value.trim())}
+            {...handlePasswordChange}
           />
         </div>
         <div className="button-container">
           <div>
             <Link to="/">
               {" "}
-              <button onClick={handleUserRegister} className="button" style={{top: "100px", left: "220px"}}>
+              <button
+                onClick={handleUserRegister}
+                className="button"
+                style={{ top: "100px", left: "220px" }}
+              >
                 Register
               </button>
             </Link>

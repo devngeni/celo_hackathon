@@ -5,14 +5,14 @@
 
 .sell_button {
     position: absolute;
-    width: 1112px;
+    width: 500px;
     height: 45px;
     left: 404px;
     top: 860px;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background: #D9D9D9;
+    background: #b11a07;
     border-radius: 25px;
     cursor: pointer;
     font-family: 'Poppins';

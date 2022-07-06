@@ -42,9 +42,11 @@ export const login = async (req: any, res: any) => {
       password
     );
 
-    if (!passwordMatch){
+    if (!passwordMatch) {
       console.log("Please input correct phone number/password");
-      res.status(400).json({msg: "Please input correct phone number/password"})
+      res
+        .status(400)
+        .json({ msg: "Please input correct phone number/password" });
     }
 
     const payload: IUser = {
@@ -65,8 +67,8 @@ export const login = async (req: any, res: any) => {
     res.status(200).send({
       token,
       user: payload.id,
-      message: "User signed in",
-      status: "success",
+      msg: "User signed in successfully",
+      success: true,
     });
   } catch (err: any) {
     console.error(err.message);

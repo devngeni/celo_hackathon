@@ -18,7 +18,7 @@ export const useAuth = () => {
     token && loadUser(token);
 
     setIsLoading(false);
-  });
+  }, ([]));
 
   const register = async (user: {
     username: string;
@@ -42,16 +42,9 @@ export const useAuth = () => {
         },
       });
 
-      const { success, token, msg } = data;
-      console.log("token", token);
-
-      if (success && token) {
-        localStorage.setItem("token", token);
-        setAuthToken(token);
-        await loadUser(token);
-      } else {
-        toast.error(msg);
-      }
+      console.log(data);
+      
+      
     } catch (error: any) {
       toast.error(error);
     }
@@ -72,8 +65,8 @@ export const useAuth = () => {
         },
       });
 
-      const { success, token, msg } = data;
-      console.log("token", token);
+      const { success, token, msg, user } = data;
+      console.log("token", token, msg, user, success);
 
       if (success && token) {
         localStorage.setItem("token", token);
@@ -82,23 +75,25 @@ export const useAuth = () => {
       } else {
         toast.error(msg);
       }
-      console.log("up here", token);
     } catch (error: any) {
       toast.error(error);
     }
   };
-  
 
   const loadUser = async (token: string) => {
     try {
-      const { data } = await config.axios.get("/auth/login", {
+      console.log("Hello I was here");
+      const { data } = await config.axios({
+        method: "get",
+        url: "/auth",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
       });
-      console.log("in here", token);
+      console.log("in here", data);
 
       const { success, msg, user } = JSON.parse(data);
+      console.log("user", success, user, msg);
 
       if (success && user) {
         console.log({ message: "user login success", success, user });
@@ -120,7 +115,6 @@ export const useAuth = () => {
   const logout = async () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    // setUser()
   };
 
   return {

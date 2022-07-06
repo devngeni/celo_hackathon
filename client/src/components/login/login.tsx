@@ -7,24 +7,31 @@ export function Login() {
   const { login } = useContext(AuthContext);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-
+  const [passwordType, setPasswordType] = useState("password");
   const navigate = useNavigate();
+
+  const handlePasswordChange = (e: any) => {
+    setPassword(e.target.value);
+  };
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    }
+    setPasswordType("password");
+  };
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     //validate login
-    if (!phoneNumber) {
-      console.log("Please input phone number");
-    }
-    if (!password) {
-      console.log("Please input password");
+    if (!phoneNumber || !password) {
+      console.log("Please input phone number and password");
     }
     await login({
       phoneNumber,
       password,
     });
-    console.log("App is here");
-    return navigate("/Home");
+
+    navigate("/Home");
   };
 
   return (
@@ -47,10 +54,11 @@ export function Login() {
           </div>
           <div>
             <input
-              type="text"
+              type={passwordType}
               placeholder="password"
               className="input-password"
               onChange={(e) => setPassword(e.target.value.trim())}
+              {...handlePasswordChange}
             />{" "}
           </div>
           <div className="button-container">
