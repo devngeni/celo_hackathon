@@ -1,16 +1,10 @@
 import { Router } from "express";
-import { check } from "express-validator";
-// import { swapCrypto } from "../../controller";
+import { transferETH, transferErc20Token } from "../../controller";
+import { validateToken } from "../../middleware";
 
 const router = Router();
 
-router.post(
-  "/sendcrypto",
-  [
-    check("phonenumber", "phone number or address of recipient required").not().isEmpty(),
-    check("amount", "please enter amount to send").not().isEmpty(),
-  ],
-  // swapCrypto
-);
+router.post("/sendETH", validateToken, transferETH);
+router.post("/sendERC20", validateToken, transferErc20Token);
 
-module.exports= router
+module.exports = router;

@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { check } from "express-validator";
 import { authToken } from "../../controller/mpesaAuth";
 import {
   callback,
@@ -13,11 +12,6 @@ const router = Router();
 router.post("/callback", callback);
 router.post("/callback/timeout", tx_timeout);
 router.post("/callback/result", tx_result);
-router.post(
-  "/stk_push",
-  [check("amount", "please enter amount to send").not().isEmpty()],
-  authToken,
-  stk_push
-);
+router.post("/stk_push", authToken, stk_push);
 
 module.exports = router;

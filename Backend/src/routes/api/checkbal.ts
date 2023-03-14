@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { check } from "express-validator";
-import { getETHBal } from "../../controller";
+import { getETHBal, getErc20Bal } from "../../controller";
+import { validateToken } from "../../middleware";
 
 const router = Router();
 
-router.post("/checkbalance", getETHBal);
+router.post("/checkETHbal", validateToken, getETHBal);
+router.post("/checkERC20bal", validateToken, getErc20Bal);
 
 module.exports = router;
