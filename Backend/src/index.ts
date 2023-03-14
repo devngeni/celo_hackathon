@@ -26,14 +26,6 @@ const Main = async () => {
   const httpServer = createServer(app);
 
 
-  //cryptoswap
-  // getBal()
-  // swapCrypto()
-  // getBal()
-
-  // importAddressFromMnemonic('reduce steak curtain broom glue walnut outdoor crawl tone potato kitten apart')
-
-
   httpServer.listen(config.PORT || 3000, () => {
     console.log(`server started at port `, httpServer.address());
   });
