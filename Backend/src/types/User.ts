@@ -3,7 +3,6 @@ export interface IUser {
   username: string;
   phonenumber: number;
   email: string;
-  walletAddress: string;
-  privateKey: string;
   password: string;
+  walletAddress?: string;
 }

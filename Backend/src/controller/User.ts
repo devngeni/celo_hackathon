@@ -41,7 +41,6 @@ export const register = async (req: Request, res: Response) => {
       email: req.body.email,
       password: req.body.password,
       walletAddress: walletAddress,
-      privateKey: privateKey,
     });
 
     let dataSaved = await user.save();
@@ -51,6 +50,9 @@ export const register = async (req: Request, res: Response) => {
     const payload = {
       user: {
         id: user.id,
+        username: user.username,
+        phonenumber: user.phonenumber,
+        walletAddress: user.walletAddress,
       },
     };
     sign(
@@ -61,7 +63,15 @@ export const register = async (req: Request, res: Response) => {
       },
       (err) => {
         if (err) throw err;
-        res.status(200).json({ dataSaved, msg:"user registered successfully" , success: true });
+        res
+          .status(200)
+          .json({
+            walletAddress,
+            privateKey,
+            mnemonic,
+            msg: "User registered successfully. Please copy your private key and mnemonic somewhere safe.",
+            success: true,
+          });
       }
     );
   } catch (err: any) {

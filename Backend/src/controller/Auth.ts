@@ -55,7 +55,6 @@ export const login = async (req: any, res: any) => {
       phonenumber: user.phonenumber,
       email: user.email,
       walletAddress: user.walletAddress,
-      privateKey: user.privateKey,
       password: user.password,
     };
 

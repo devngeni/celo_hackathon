@@ -1,15 +1,9 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { getBal } from "../../controller";
+import { getETHBal } from "../../controller";
 
 const router = Router();
 
-router.post(
-  "/checkbalance",
-  [
-    check("phonenumber", "please enter phonenumber to chcek balance").not().isEmpty(),
-  ],
-  getBal
-);
+router.post("/checkbalance", getETHBal);
 
-module.exports= router
+module.exports = router;
