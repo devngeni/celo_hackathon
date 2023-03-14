@@ -36,6 +36,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.3",
     "mongoose": "^6.3.6",
+    "multichain-crypto-wallet": "^0.2.7",
     "web3": "^1.7.3",
     "xss-clean": "^0.1.1"
   }

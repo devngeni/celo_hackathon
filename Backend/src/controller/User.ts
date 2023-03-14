@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import { sign } from "jsonwebtoken";
 import { config } from "../config";
-import { createWallet } from "./wallet";
 import { User } from "../model";
+import { createMultiChainWallet } from "./multichainWallet";
 
 export const register = async (req: Request, res: Response) => {
   const errors = validationResult(req);
@@ -25,11 +25,12 @@ export const register = async (req: Request, res: Response) => {
   }
 
   //create wallet address and private key which will be saved
-  let details = await createWallet();
-  let walletAddress = details.walletAddress.toString();
-  let privateKey = details.walletAddress.toString();
+  let details = await createMultiChainWallet();
+  let walletAddress = details.address.toString();
+  let privateKey = details.privateKey.toString();
+  let mnemonic = details.mnemonic.toString();
 
-  console.log({ walletAddress, privateKey });
+  console.log({ walletAddress, privateKey, mnemonic });
 
   console.log(req.body);
 
